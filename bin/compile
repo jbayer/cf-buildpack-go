@@ -60,6 +60,7 @@ else
     echo >&2 " !     http://mmcgrana.github.io/2012/09/getting-started-with-go-on-heroku"
     exit 1
 fi
+ver=go${GOVERSION:-1.2.1}
 
 file=${GOFILE:-$ver.$(uname|tr A-Z a-z)-amd64$(platext $ver).tar.gz}
 url=${GOURL:-http://go.googlecode.com/files/$file}
@@ -70,14 +71,14 @@ then
     exit 1
 fi
 
-ver=go${GOVERSION:-1.2.1}
-
 echo "buildpack vars"
 echo "build: $build"
 echo "cache: $cache"
 echo "buildpack: $buildpack"
 echo "buildpack_absolute: $buildpack_absolute"
 echo "ver: $ver"
+echo "file: $file"
+echo "url: $url"
 
 if test -d $cache/$ver/go
 then
