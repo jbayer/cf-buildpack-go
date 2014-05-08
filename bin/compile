@@ -70,6 +70,8 @@ then
     exit 1
 fi
 
+ver=go${GOVERSION:-1.2.1}
+
 echo "buildpack vars"
 echo "build: $build"
 echo "cache: $cache"
