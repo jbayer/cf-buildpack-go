@@ -24,6 +24,9 @@ cache=$(cd "$2/" && pwd)
 buildpack=$(dirname $(dirname $0))
 buildpack_absolute="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
 
+echo "environment variables"
+env
+
 arch=$(uname -m|tr A-Z a-z)
 if test $arch = x86_64
 then arch=amd64
